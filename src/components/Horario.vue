@@ -1,31 +1,40 @@
 <template>
-    <table class="table">
+    <div class="container">
+        <h3 class="mt-4">Horario de clases de Sistemas</h3>
+        <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Lunes</th>
+      <th scope="col">Martes</th>
+      <th scope="col">Miercoles</th>
+      <th scope="col">Jueves</th>
+      <th scope="col">Viernes</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+    <tr v-for="(h, index) in horario" :key="index">
+        <td>{{ h.hora }}</td>
+        <td>{{ h.lunes }}</td>
+        <td>{{ h.martes }}</td>
+        <td>{{ h.miercoles }}</td>
+        <td>{{ h.jueves }}</td>
+        <td>{{ h.viernes }}</td>
     </tr>
   </tbody>
 </table>
+    </div>
+    
 </template>
+
+<script setup>
+import {ref} from 'vue';
+
+const horario = ref ([
+    {hora:'7:00 - 9:00', lunes:'IA', martes:'Agil', miercoles:'Web', jueves:'IA', viernes:'Movil'},
+    {hora:'9:00 - 11:00', lunes:'IA', martes:'Agil', miercoles:'Web', jueves:'IA', viernes:'Movil'},
+    {hora:'11:00 - 13:00', lunes:'IA', martes:'Agil', miercoles:'Web', jueves:'IA', viernes:'Movil'},
+    {hora:'13:00 - 15:00', lunes:'IA', martes:'Agil', miercoles:'Web', jueves:'IA', viernes:'Movil'},
+    {hora:'15:00 - 17:00', lunes:'IA', martes:'Agil', miercoles:'Web', jueves:'IA', viernes:'Movil'},
+])
+</script>
