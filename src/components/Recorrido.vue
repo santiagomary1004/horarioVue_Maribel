@@ -27,7 +27,7 @@
     </ul>
 </div>
 </template>
-<style>
+<style scoped>
 h3{
     color:white;
     background-color: rgb(205, 132, 239);
